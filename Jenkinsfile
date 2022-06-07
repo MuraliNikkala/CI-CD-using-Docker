@@ -9,7 +9,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'master', url: 'https://github.com/MuraliNikkala/CI-CD-using-Docker.git'
+                git branch: 'master', url: 'https://github.com/devops4solutions/CI-CD-using-Docker.git'
              
           }
         }
@@ -53,7 +53,7 @@ pipeline {
  stage('Run Docker container on remote hosts') {
              
             steps {
-                sh "docker -H ssh://jenkins@172.31.28.25 run -d -p 8006:8080 muralinikkala/samplewebapp"
+                sh "docker -H ssh://jenkins@10.0.12.188 run -d -p 8006:8080 muralinikkala/samplewebapp"
  
             }
         }
